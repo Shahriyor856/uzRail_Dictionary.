@@ -1,0 +1,274 @@
+{
+  "words": [
+    {
+      "word": "Locomotive",
+      "pronunciation": "/ˌloʊkəˈmoʊtɪv/",
+      "type": "noun, technical",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Lokomotiv",
+          "description": "Poyezd uchun harakatlantiruvchi kuch ta'minlovchi o'z-o'zidan harakatlanadigan temir yo'l transporti."
+        },
+        {
+          "lang": "kk",
+          "word": "Локомотив",
+          "description": "Пойызға қозғаушы күш беретін өздігінен жүретін теміржол көлігі."
+        },
+        {
+          "lang": "en",
+          "word": "Locomotive",
+          "description": "A self-propelled railway vehicle that provides motive power for a train."
+        },
+        {
+          "lang": "ru",
+          "word": "Локомотив",
+          "description": "Самоходное железнодорожное транспортное средство, обеспечивающее тягу для поезда."
+        }
+      ]
+    },
+    {
+      "word": "Railway",
+      "pronunciation": "/ˈreɪlweɪ/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Temir yo'l",
+          "description": "Poyezdlar harakatlanadigan maxsus yo'l tizimi."
+        },
+        {
+          "lang": "kk",
+          "word": "Темір жол",
+          "description": "Пойыздар жүретін арнайы жол жүйесі."
+        },
+        {
+          "lang": "en",
+          "word": "Railway",
+          "description": "A track made of rails on which trains run."
+        },
+        {
+          "lang": "ru",
+          "word": "Железная дорога",
+          "description": "Путь из рельсов, по которому движутся поезда."
+        }
+      ]
+    },
+    {
+      "word": "Station",
+      "pronunciation": "/ˈsteɪʃən/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Stansiya",
+          "description": "Yo'lovchilar tushib-chiqadigan va poyezdlar to'xtagdigan joy."
+        },
+        {
+          "lang": "kk",
+          "word": "Станция",
+          "description": "Жолаушылар түсіп-мінетін және пойыздар тоқтайтын жер."
+        },
+        {
+          "lang": "en",
+          "word": "Station",
+          "description": "A place where trains stop to allow passengers to get on and off."
+        },
+        {
+          "lang": "ru",
+          "word": "Станция",
+          "description": "Место остановки поездов для посадки и высадки пассажиров."
+        }
+      ]
+    },
+    {
+      "word": "Tunnel",
+      "pronunciation": "/ˈtʌnəl/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Tunnel",
+          "description": "Tog' yoki yer ostidan o'tkazilgan yo'l."
+        },
+        {
+          "lang": "kk",
+          "word": "Туннель",
+          "description": "Тау немесе жер астынан өтетін жол."
+        },
+        {
+          "lang": "en",
+          "word": "Tunnel",
+          "description": "An underground or underwater passage for trains or vehicles."
+        },
+        {
+          "lang": "ru",
+          "word": "Туннель",
+          "description": "Подземный или подводный проход для поездов или транспортных средств."
+        }
+      ]
+    },
+    {
+      "word": "Conductor",
+      "pronunciation": "/kənˈdʌktər/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Konduktor",
+          "description": "Poyezdda chipta tekshiruvchi va yo'lovchilarga yordam beruvchi xodim."
+        },
+        {
+          "lang": "kk",
+          "word": "Кондуктор",
+          "description": "Пойызда билет тексеретін және жолаушыларға көмектесетін қызметкер."
+        },
+        {
+          "lang": "en",
+          "word": "Conductor",
+          "description": "A person who checks tickets and assists passengers on a train."
+        },
+        {
+          "lang": "ru",
+          "word": "Проводник",
+          "description": "Сотрудник, проверяющий билеты и помогающий пассажирам в поезде."
+        }
+      ]
+    },
+    {
+      "word": "Platform",
+      "pronunciation": "/ˈplætfɔːrm/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Platforma",
+          "description": "Stansiyada yo'lovchilar poyezdga chiqib tushadigan baland joy."
+        },
+        {
+          "lang": "kk",
+          "word": "Платформа",
+          "description": "Станциядағы жолаушылар пойызға мінетін және түсетін биік орын."
+        },
+        {
+          "lang": "en",
+          "word": "Platform",
+          "description": "A raised area at a station where passengers board and exit trains."
+        },
+        {
+          "lang": "ru",
+          "word": "Платформа",
+          "description": "Возвышенное место на станции для посадки и выхода пассажиров."
+        }
+      ]
+    },
+    {
+      "word": "Freight",
+      "pronunciation": "/freɪt/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Yuk",
+          "description": "Poyezd yoki boshqa transport vositasi orqali tashiladigan tovarlar."
+        },
+        {
+          "lang": "kk",
+          "word": "Жүк",
+          "description": "Пойыз немесе басқа көлік арқылы тасымалданатын тауарлар."
+        },
+        {
+          "lang": "en",
+          "word": "Freight",
+          "description": "Goods transported by train or other means of transport."
+        },
+        {
+          "lang": "ru",
+          "word": "Груз",
+          "description": "Товары, перевозимые поездом или другим видом транспорта."
+        }
+      ]
+    },
+    {
+      "word": "Signal",
+      "pronunciation": "/ˈsɪɡnəl/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Signal",
+          "description": "Poyezd harakatini boshqarish uchun ishlatiladigan belgi yoki ko'rsatma."
+        },
+        {
+          "lang": "kk",
+          "word": "Сигнал",
+          "description": "Пойыз қозғалысын басқару үшін қолданылатын белгі немесе нұсқаулық."
+        },
+        {
+          "lang": "en",
+          "word": "Signal",
+          "description": "A sign or indicator used to control the movement of trains."
+        },
+        {
+          "lang": "ru",
+          "word": "Сигнал",
+          "description": "Знак или указатель для управления движением поездов."
+        }
+      ]
+    },
+    {
+      "word": "Carriage",
+      "pronunciation": "/ˈkærɪdʒ/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Vagon",
+          "description": "Yo'lovchilar yoki yuk tashish uchun mo'ljallangan poyezd qismi."
+        },
+        {
+          "lang": "kk",
+          "word": "Вагон",
+          "description": "Жолаушылар немесе жүк тасымалдауға арналған пойыздың бөлігі."
+        },
+        {
+          "lang": "en",
+          "word": "Carriage",
+          "description": "A section of a train designed to carry passengers or goods."
+        },
+        {
+          "lang": "ru",
+          "word": "Вагон",
+          "description": "Часть поезда, предназначенная для перевозки пассажиров или грузов."
+        }
+      ]
+    },
+    {
+      "word": "Depot",
+      "pronunciation": "/ˈdiːpoʊ/",
+      "type": "noun",
+      "translations": [
+        {
+          "lang": "uz",
+          "word": "Depo",
+          "description": "Poyezdlar saqlanadigan va ta'mirlanadigan maxsus joy."
+        },
+        {
+          "lang": "kk",
+          "word": "Депо",
+          "description": "Пойыздар сақталатын және жөнделетін арнайы орын."
+        },
+        {
+          "lang": "en",
+          "word": "Depot",
+          "description": "A place where trains are stored and maintained."
+        },
+        {
+          "lang": "ru",
+          "word": "Депо",
+          "description": "Место хранения и технического обслуживания поездов."
+        }
+      ]
+    }
+  ]
+}

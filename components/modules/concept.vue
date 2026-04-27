@@ -1,0 +1,3 @@
+<template>
+  <UiConcept />
+</template>

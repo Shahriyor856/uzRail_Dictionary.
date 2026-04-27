@@ -1,7 +1,5 @@
-<script setup lang="ts">
-import Translator from "~/components/modules/translator.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <Translator />
+  <ModulesTranslator />
 </template>
