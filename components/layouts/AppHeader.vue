@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-[#0f3361] sticky top-0 z-[100] shadow-[0_1px_8px_rgba(0,0,0,0.2)]"
+    class="bg-[#012a4a] sticky top-0 z-[100] shadow-[0_1px_8px_rgba(0,0,0,0.2)]"
   >
     <div
       class="flex items-center justify-between px-4 sm:px-6 h-[54px] max-w-[1200px] mx-auto"
@@ -54,7 +54,7 @@
           active-class=" border-b-[#c8920a] bg-white/5"
         >
           <el-icon><Reading /></el-icon>
-          Kutubxona
+          Kategoriyalar
         </NuxtLink>
       </div>
 

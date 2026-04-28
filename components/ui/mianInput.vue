@@ -11,7 +11,7 @@
       />
       <button
         @click="search"
-        class="w-full sm:w-auto px-2 py-1 sm:py-2 bg-[#0f3361] hover:bg-opacity-60 transition-all duration-500 active:bg-[#0f3361] text-white flex items-center justify-center text-xs sm:text-base"
+        class="w-full sm:w-auto px-2 py-1 sm:py-2 bg-[#012a4a] hover:bg-opacity-60 transition-all duration-500 active:bg-[#0f3361] text-white flex items-center justify-center text-xs sm:text-base"
       >
         search
       </button>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#1a4f8a]">
+  <div class="bg-[#013a63]">
     <div
       class="max-w-[1200px] mx-auto flex flex-col items-center gap-2 sm:gap-4 py-8 sm:py-12 transition-all duration-500"
     >
@@ -19,5 +19,7 @@
 </template>
 
 <script setup lang="ts">
-const { selectedWord, results } = useSearch();
+const { selectedWord, results, resetAll } = useSearch();
+
+resetAll();
 </script>
