@@ -9,7 +9,7 @@
         @click="selectWord(item)"
         class="flex items-start gap-2 sm:gap-4 py-2 sm:py-4 border-b border-gray-100 hover:border-l-2 hover:sm:border-l-4 border-l-[#012a4a] cursor-pointer"
       >
-        <span class="text-xs text-gray-400 w-4 pt-1 pl-3 sm:pl-6 shrink-0">
+        <span class="text-xs text-gray-400 w-4 pt-1 pl-3 sm:pl-6 shrink-0"> 
           {{ index + 1 }}
         </span>
 

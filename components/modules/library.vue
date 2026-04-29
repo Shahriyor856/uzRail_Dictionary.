@@ -10,13 +10,17 @@
 
     <!-- Word list -->
     <div v-else-if="selectedCategory && !selectedWord">
-      <div class="max-w-[1200px] mx-auto px-4 py-4">
+      <div class="max-w-[1200px] px-6 sm:px-8 py-2 sm:py-4">
         <button
           @click="clearCategory()"
           class="flex items-center gap-1 text-xs sm:text-sm font-serif text-gray-500 hover:text-gray-800 transition-all duration-300"
         >
           <span>←</span>
-          <span>Kategoriyalarga qaytish</span>
+          <span
+            ><p class="text-xs sm:text-sm md:text-base">
+              Kategoriyalarga qaytish
+            </p></span
+          >
         </button>
       </div>
       <UiResultsTable />
