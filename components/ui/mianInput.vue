@@ -6,14 +6,14 @@
       <input
         v-model="query"
         type="text"
-        placeholder="Search..."
+        :placeholder="$t('search') + '...'"
         class="flex-1 w-full px-2 sm:px-4 py-2 text-black bg-white outline-none text-sm sm:text-base placeholder:text-xs placeholder:sm:text-base"
       />
       <button
         @click="search"
         class="w-full sm:w-auto px-2 py-1 sm:py-2 bg-[#012a4a] hover:bg-opacity-60 transition-all duration-500 active:bg-[#0f3361] text-white flex items-center justify-center text-xs sm:text-base"
       >
-        search
+        {{ $t("search") }}
       </button>
     </div>
   </div>

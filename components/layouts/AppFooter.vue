@@ -10,7 +10,7 @@
         >
           <h4 class="text-white text-[12px] font-medium">Asoschilar</h4>
           <button
-            class="sm:hidden text-lg text-white font-semibold"
+            class="md:hidden text-lg text-white font-semibold"
             @click="menuOpen = !menuOpen"
           >
             {{ menuOpen ? "-" : "+" }}
@@ -18,15 +18,13 @@
         </div>
         <div class="hidden md:flex">
           <p class="text-[12px] text-white/50 leading-7">
-            DasUty MChJ (mas’uliyati cheklangan jamiyati) tomonidan ishlab
-            chiqilgan.
+            {{ $t("creators") }}
           </p>
         </div>
         <transition>
           <div v-if="menuOpen">
             <p class="text-[12px] text-white/50 leading-7">
-              DasUty MChJ (mas’uliyati cheklangan jamiyati) tomonidan ishlab
-              chiqilgan.
+              {{ $t("creators") }}
             </p>
           </div>
         </transition>
@@ -39,7 +37,7 @@
         >
           <h4 class="text-white text-[12px] font-medium">Sahifalar</h4>
           <button
-            class="sm:hidden text-lg text-white font-semibold"
+            class="md:hidden text-lg text-white font-semibold"
             @click="menuOpenTwo = !menuOpenTwo"
           >
             {{ menuOpenTwo ? "-" : "+" }}
@@ -82,7 +80,7 @@
         >
           <h4 class="text-white text-[12px] font-medium">Kategoriyalar</h4>
           <button
-            class="sm:hidden text-lg text-white font-semibold"
+            class="md:hidden text-lg text-white font-semibold"
             @click="menuOpenThree = !menuOpenThree"
           >
             {{ menuOpenThree ? "-" : "+" }}
@@ -122,14 +120,14 @@
         >
           <h4 class="text-white text-[12px] font-medium">Contact</h4>
           <button
-            class="sm:hidden text-lg text-white font-semibold"
+            class="md:hidden text-lg text-white font-semibold"
             @click="menuOpenFour = !menuOpenFour"
           >
             {{ menuOpenFour ? "-" : "+" }}
           </button>
         </div>
 
-        <div class="hidden md:flex">
+        <div class="hidden md:block">
           <div
             v-for="item in contacts"
             :key="item.text"
@@ -175,11 +173,13 @@
   </footer>
 </template>
 
-<script setup>
-const navLinks = [
-  { label: "Tarjimon", to: "/translator" },
-  { label: "Kategoriyalar", to: "/librarySection" },
-];
+<script setup lang="ts">
+const { t } = useI18n();
+
+const navLinks = computed(() => [
+  { label: t("translator"), to: "/translator" },
+  { label: t("categories"), to: "/librarySection" },
+]);
 
 const categories = [
   "Rolling Stock ",

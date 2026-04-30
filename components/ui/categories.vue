@@ -4,10 +4,10 @@
   >
     <div class="flex flex-col items-start gap-0 sm:gap-2">
       <h1 class="text-base sm:text-lg md:text-2xl font-serif font-medium">
-        Atamalar kutubxonasi
+        {{ $t("termCategory") }}
       </h1>
       <p class="text-sm sm:text-base md:text-lg text-gray-500">
-        Tushunchalarni ko'rish uchun turkumni tanlang
+        {{ $t("pickOne") }}
       </p>
     </div>
 
@@ -20,7 +20,7 @@
       >
         <h1 class="text-base sm:text-xl font-medium">{{ cat.label }}</h1>
         <p class="text-sm sm:text-base text-gray-500">
-          {{ wordCount[cat.id] }} ta atama
+          {{ wordCount[cat.id] }} {{ $t("terms") }}
         </p>
       </div>
     </div>

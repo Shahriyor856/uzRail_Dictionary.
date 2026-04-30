@@ -1,0 +1,18 @@
+{
+  "railTranslator": "Temir yo‘l lug‘ati",
+  "uzRail": "O'zbekiston Temir Yo'llari",
+  "translator": "Tarjimon",
+  "categories": "Turkumlar",
+
+  "findTerm": "Temir yo‘l atamalarini topish",
+  "findIn": "o‘zbek, qozoq, rus, ingliz, tillarida atamalarni ma’nosini toping",
+  "search": "qidiruv",
+  "knowIn": "Ingliz, O'zbek, Rus yoki Qozog'cha ma'nolarini bilib olasz",
+  "terms": "ta atama",
+  "back": "Orqaga qaytish",
+
+  "termCategory": "Atamalar turkumi",
+  "pickOne": "Tushunchalarni ko'rish uchun turkumni tanlang",
+
+  "creators": "DasUty MChJ (mas’uliyati cheklangan jamiyati) tomonidan ishlab chiqilgan."
+}

@@ -8,7 +8,7 @@
         class="flex items-center gap-1 text-xs sm:text-sm font-serif text-gray-500 hover:text-gray-800 transition-all duration-300"
       >
         <span>←</span>
-        <span>Orqaga qaytish</span>
+        <span>{{ $t("back") }}</span>
       </button>
       <h1 class="text-lg sm:text-2xl font-medium font-serif">
         {{ selectedWord.word }}

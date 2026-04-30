@@ -18,7 +18,7 @@
           <span>←</span>
           <span
             ><p class="text-xs sm:text-sm md:text-base">
-              Kategoriyalarga qaytish
+              {{ $t("back") }}
             </p></span
           >
         </button>

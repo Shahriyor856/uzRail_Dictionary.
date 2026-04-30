@@ -4,10 +4,10 @@
       class="max-w-[1200px] mx-auto flex flex-col items-center gap-2 sm:gap-4 py-8 sm:py-12 transition-all duration-500"
     >
       <h3 class="text-white text-base sm:text-xl font-serif">
-        Find a railway term
+        {{ $t("findTerm") }}
       </h3>
       <h1 class="text-white/55 text-xs sm:text-sm font-serif">
-        Search in English, Uzbek, Russian or Kazakh
+        {{ $t("findIn") }}
       </h1>
 
       <UiMianInput />
