@@ -15,7 +15,7 @@
           />
         </div>
 
-        <div class="leading-tight">
+        <div class="leading-tight hidden sm:block">
           <div class="text-white text-sm sm:text-base md:text-lg font-medium">
             {{ $t("railTranslator") }}
           </div>
@@ -82,12 +82,25 @@
             />
           </svg>
         </button>
+        <!-- <button v-if="!isAuthenticated" @click="goToLogin">
+          <p class="text-gray-400 text-sm sm:text-base">Login</p>
+        </button>
+        <button v-else @click="logout">
+          <p class="text-gray-400 text-sm sm:text-base">Logout</p>
+        </button> -->
+
+        <button
+          class="text-gray-400 text-sm sm:text-base"
+          @click="isAuthenticated ? logout() : goToLogin()"
+        >
+          {{ isAuthenticated ? "Logout" : "Login" }}
+        </button>
 
         <div class="relative inline-block" ref="wrapper">
           <!-- Full button on md+ screens -->
           <button
             @click="toggle"
-            class="hidden md:flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-2 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition"
+            class="hidden md:flex items-center gap-2 bg-white/10 border border-gray-400 rounded-xl px-2 py-2 text-sm font-medium text-gray-200 hover:bg-white/15 transition"
           >
             <img
               :src="current.flag"
@@ -114,7 +127,7 @@
           <!-- Icon-only button on small screens -->
           <button
             @click="toggle"
-            class="flex md:hidden items-center justify-center bg-white border border-gray-200 rounded-xl w-10 h-10 text-lg hover:bg-gray-50 transition"
+            class="flex md:hidden items-center justify-center bg-white/10 border border-gray-400 rounded-xl w-10 h-10 text-lg hover:bg-white/15 transition"
           >
             <img
               :src="current.flag"
@@ -126,26 +139,26 @@
           <!-- Dropdown -->
           <div
             v-if="open"
-            class="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-xl overflow-hidden z-50 shadow-lg"
+            class="absolute right-0 mt-2 w-32 sm:w-36 md:w-44 bg-white/10 border border-gray-400 rounded-xl overflow-hidden z-50 shadow-lg"
           >
             <div
               v-for="lang in languages"
               :key="lang.code"
               @click="pick(lang)"
-              class="flex items-center gap-3 px-4 py-2.5 text-sm cursor-pointer hover:bg-gray-50 transition"
+              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 text-sm cursor-pointer hover:bg-white/15 transition"
               :class="
                 current.code === lang.code
-                  ? 'bg-indigo-50 text-[#012a4a] font-medium'
-                  : 'text-gray-700'
+                  ? 'bg-white/20 text-gray-100 font-medium'
+                  : 'text-gray-200'
               "
             >
               <img
                 :src="lang.flag"
                 :alt="lang.label"
-                class="w-5 h-5 rounded-full object-cover"
+                class="w-3 sm:w-5 h-3 sm:h-5 rounded-full object-cover"
               />
               <span>{{ lang.label }}</span>
-              <span class="ml-auto text-xs text-gray-400">{{
+              <span class="ml-auto text-xs text-gray-300 hidden sm:block">{{
                 lang.code.toUpperCase()
               }}</span>
             </div>
@@ -158,11 +171,11 @@
     <transition name="slide">
       <div
         v-if="menuOpen"
-        class="flex flex-col bg-[#0a2548] py-2 border-t border-white/10"
+        class="flex flex-col bg-[#0a2548] border-t border-white/10"
       >
         <NuxtLink
           to="/translator"
-          class="flex items-center gap-2 px-6 py-3 text-[14px] text-white/70 no-underline hover:bg-white/5 hover:text-white"
+          class="flex items-center gap-2 px-4 py-3 text-sm text-white/70 no-underline hover:bg-white/5 hover:text-white"
           active-class="text-[#c8920a]"
           @click="menuOpen = false"
         >
@@ -172,7 +185,7 @@
 
         <NuxtLink
           to="/librarySection"
-          class="flex items-center gap-2 px-6 py-3 text-[14px] text-white/70 no-underline hover:bg-white/5 hover:text-white"
+          class="flex items-center gap-2 px-4 py-3 text-sm text-white/70 no-underline hover:bg-white/5 hover:text-white"
           active-class="text-[#c8920a]"
           @click="menuOpen = false"
         >
@@ -193,6 +206,11 @@ import uz from "@/assests/images/flags/uz.png";
 import kz from "@/assests/images/flags/kz.png";
 import ru from "@/assests/images/flags/ru.webp";
 import eng from "@/assests/images/flags/britan.png";
+
+const { isAuthenticated, logout } = useAuth();
+const goToLogin = () => {
+  navigateTo("/login");
+};
 
 type LocaleCode = "uz" | "oz" | "kz" | "ru" | "en";
 

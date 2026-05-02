@@ -11,5 +11,20 @@
   "back": "Go back",
   "termCategory": "Term Category",
   "pickOne": "Select a category to view terms",
-  "creators": "Developed by DasUty LLC (limited liability company)."
+  "creators": "Developed by DasUty LLC (limited liability company).",
+
+  "welcome": "Welcome back",
+  "signin_sub": "Sign in to your account",
+  "userName": "username",
+  "password": "Password",
+  "signin": "Sign In ",
+  "forgot": "Forgot password?",
+  "error": "Invalid email or password",
+
+  "brand_name": "Railway Dictionary",
+  "brand_sub": "Uzbekistan Railways",
+  "headline_1": "Railway",
+  "headline_2": "Terminology",
+  "headline_3": "Dictionary",
+  "brand_desc": "Find meanings of railway terms in Uzbek, Kazakh, Russian, and English — all in one place."
 }

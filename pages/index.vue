@@ -1,5 +1,5 @@
 <script setup>
-navigateTo("/librarySection");
+navigateTo("/translator");
 </script>
 
 <template></template>

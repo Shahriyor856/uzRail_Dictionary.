@@ -14,5 +14,21 @@
   "termCategory": "Atamalar turkumi",
   "pickOne": "Tushunchalarni ko'rish uchun turkumni tanlang",
 
-  "creators": "DasUty MChJ (mas’uliyati cheklangan jamiyati) tomonidan ishlab chiqilgan."
+  "creators": "DasUty MChJ (mas’uliyati cheklangan jamiyati) tomonidan ishlab chiqilgan.",
+
+  "welcome": "Xush kelibsiz",
+  "signin_sub": "Hisobingizga kiring",
+  "userName": "foydalanuvchi nomi",
+  "password": "Parol",
+  "signin": "Kirish ",
+
+  "forgot": "Parolni unutdingizmi?",
+  "error": "Email yoki parol noto'g'ri",
+
+  "brand_name": "Temir yo'l lug'ati",
+  "brand_sub": "O'zbekiston Temir Yo'llari",
+  "headline_1": "Temir yo'l",
+  "headline_2": "Terminlari",
+  "headline_3": "Lug'ati",
+  "brand_desc": "O'zbek, Qozoq, Rus va Ingliz tillarida temir yo'l atamalarining ma'nosini toping."
 }
