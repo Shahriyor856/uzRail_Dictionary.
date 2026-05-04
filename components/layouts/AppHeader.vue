@@ -29,21 +29,14 @@
       <div class="flex items-center gap-4 sm:gap-6 md:gap-8">
         <div class="hidden md:flex h-[54px] sm:h-[64px]">
           <NuxtLink
-            to="/translator"
+            v-for="link in navlinks"
+            :key="link.to"
+            :to="link.to"
             class="h-full px-[18px] flex items-center gap-[6px] text-[13px] text-white no-underline border-b-2 border-transparent transition-all duration-500 hover:text-white"
             active-class=" border-b-[#c8920a] bg-white/5"
           >
-            <el-icon><Search /></el-icon>
-            {{ $t("translator") }}
-          </NuxtLink>
-
-          <NuxtLink
-            to="/librarySection"
-            class="h-full px-[18px] flex items-center gap-[6px] text-[13px] text-white no-underline border-b-2 border-transparent transition-all duration-500 hover:text-white"
-            active-class=" border-b-[#c8920a] bg-white/5"
-          >
-            <el-icon><Reading /></el-icon>
-            {{ $t("categories") }}
+            <el-icon><component :is="link.icon" /></el-icon>
+            {{ $t(link.label) }}
           </NuxtLink>
         </div>
 
@@ -100,7 +93,7 @@
           <!-- Full button on md+ screens -->
           <button
             @click="toggle"
-            class="hidden md:flex items-center gap-2 bg-white/10 border border-gray-400 rounded-xl px-2 py-2 text-sm font-medium text-gray-200 hover:bg-white/15 transition"
+            class="hidden md:flex items-center gap-2 bg-black/10 border border-gray-400 rounded-xl px-2 py-2 text-sm font-medium text-gray-200 hover:bg-black/20 transition"
           >
             <img
               :src="current.flag"
@@ -127,7 +120,7 @@
           <!-- Icon-only button on small screens -->
           <button
             @click="toggle"
-            class="flex md:hidden items-center justify-center bg-white/10 border border-gray-400 rounded-xl w-10 h-10 text-lg hover:bg-white/15 transition"
+            class="flex md:hidden items-center justify-center bg-black/10 border border-gray-400 rounded-xl w-10 h-10 text-lg hover:bg-black/10 transition"
           >
             <img
               :src="current.flag"
@@ -139,16 +132,16 @@
           <!-- Dropdown -->
           <div
             v-if="open"
-            class="absolute right-0 mt-2 w-32 sm:w-36 md:w-44 bg-white/10 border border-gray-400 rounded-xl overflow-hidden z-50 shadow-lg"
+            class="absolute right-0 mt-2 w-32 sm:w-36 md:w-44 bg-black/50 border border-gray-400 rounded-xl overflow-hidden z-50 shadow-lg"
           >
             <div
               v-for="lang in languages"
               :key="lang.code"
               @click="pick(lang)"
-              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 text-sm cursor-pointer hover:bg-white/15 transition"
+              class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 text-sm cursor-pointer hover:bg-black/10 transition"
               :class="
                 current.code === lang.code
-                  ? 'bg-white/20 text-gray-100 font-medium'
+                  ? 'bg-black/25 text-gray-100 font-medium'
                   : 'text-gray-200'
               "
             >
@@ -198,10 +191,9 @@
 </template>
 
 <script setup lang="ts">
-import { Search, Reading } from "@element-plus/icons-vue";
 import { ref, onMounted, onUnmounted } from "vue";
 import logo from "@/assests/images/logo.png";
-
+import { Search, Reading, Opportunity } from "@element-plus/icons-vue";
 import uz from "@/assests/images/flags/uz.png";
 import kz from "@/assests/images/flags/kz.png";
 import ru from "@/assests/images/flags/ru.webp";
@@ -242,6 +234,12 @@ const current = computed<Language>(() => {
   const code = (locale.value ?? "uz") as LocaleCode;
   return languages.find((l) => l.code === code) ?? languages[0];
 });
+
+const navlinks = [
+  { to: "/translator", icon: Search, label: "translator" },
+  { to: "/librarySection", icon: Reading, label: "categories" },
+  { to: "/suggestions", icon: Opportunity, label: "takliflar" },
+];
 
 function toggle(): void {
   open.value = !open.value;
