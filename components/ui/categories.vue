@@ -1,25 +1,27 @@
 <template>
-  <div
-    class="max-w-[1200px] mx-auto flex flex-col gap-4 sm:gap-6 md:gap-8 transition-all duration-500"
-  >
+  <div class="flex flex-col gap-4 transition-all duration-500">
     <div class="flex flex-col items-start gap-0 sm:gap-2">
-      <h1 class="text-base sm:text-lg md:text-2xl font-serif font-medium">
+      <h1
+        class="text-sm sm:text-base font-medium sm:font-semibold text-[#1a2e44]"
+      >
         {{ $t("termCategory") }}
       </h1>
-      <p class="text-sm sm:text-base md:text-lg text-gray-500">
+      <p class="text-xs sm:text-sm text-[#7a96b0]">
         {{ $t("pickOne") }}
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
+    <div class="grid grid-cols-1 gap-2 sm:gap-4">
       <div
         v-for="cat in categories"
         :key="cat.id"
         @click="$emit('select', cat.id)"
-        class="px-3 sm:px-6 py-3 sm:py-6 flex flex-col items-start gap-2 sm:gap-4 border border-gray-300 hover:border-l-4 hover:border-b-4 hover:border-gray-800 hover:-translate-y-2 rounded-xl cursor-pointer transition-all duration-300"
+        class="flex flex-col gap-0 sm:gap-2 bg-white border border-[#dde6f0] rounded-xl w-full px-2 sm:px-4 py-1.5 sm:py-3 cursor-pointer hover:bg-[#f8fafc] hover:-translate-y-1 transition-all duration-350"
       >
-        <h1 class="text-base sm:text-xl font-medium">{{ cat.label }}</h1>
-        <p class="text-sm sm:text-base text-gray-500">
+        <h1 class="text-xs sm:text-sm md:text-base font-normal sm:font-medium">
+          {{ cat.label }}
+        </h1>
+        <p class="text-xs sm:text-sm text-[#7a96b0]">
           {{ wordCount[cat.id] }} {{ $t("terms") }}
         </p>
       </div>

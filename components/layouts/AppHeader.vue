@@ -29,8 +29,8 @@
       <div class="flex items-center gap-4 sm:gap-6 md:gap-8">
         <div class="hidden md:flex h-[54px] sm:h-[64px]">
           <NuxtLink
-            v-for="link in navlinks"
-            :key="link.to"
+            v-for="(link, index) in navlinks"
+            :key="index"
             :to="link.to"
             class="h-full px-[18px] flex items-center gap-[6px] text-[13px] text-white no-underline border-b-2 border-transparent transition-all duration-500 hover:text-white"
             active-class=" border-b-[#c8920a] bg-white/5"
@@ -167,23 +167,15 @@
         class="flex flex-col bg-[#0a2548] border-t border-white/10"
       >
         <NuxtLink
-          to="/translator"
+          v-for="(link, index) in navlinks"
+          :key="index"
+          :to="link.to"
           class="flex items-center gap-2 px-4 py-3 text-sm text-white/70 no-underline hover:bg-white/5 hover:text-white"
           active-class="text-[#c8920a]"
           @click="menuOpen = false"
         >
-          <el-icon><Search /></el-icon>
-          {{ $t("railTranslator") }}
-        </NuxtLink>
-
-        <NuxtLink
-          to="/librarySection"
-          class="flex items-center gap-2 px-4 py-3 text-sm text-white/70 no-underline hover:bg-white/5 hover:text-white"
-          active-class="text-[#c8920a]"
-          @click="menuOpen = false"
-        >
-          <el-icon><Reading /></el-icon>
-          {{ $t("categories") }}
+          <el-icon><component :is="link.icon" /></el-icon>
+          {{ $t(link.label) }}
         </NuxtLink>
       </div>
     </transition>
@@ -193,7 +185,13 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 import logo from "@/assests/images/logo.png";
-import { Search, Reading, Opportunity } from "@element-plus/icons-vue";
+import {
+  Search,
+  Menu,
+  Reading,
+  Opportunity,
+  User,
+} from "@element-plus/icons-vue";
 import uz from "@/assests/images/flags/uz.png";
 import kz from "@/assests/images/flags/kz.png";
 import ru from "@/assests/images/flags/ru.webp";
@@ -237,8 +235,14 @@ const current = computed<Language>(() => {
 
 const navlinks = [
   { to: "/translator", icon: Search, label: "translator" },
-  { to: "/librarySection", icon: Reading, label: "categories" },
-  { to: "/suggestions", icon: Opportunity, label: "takliflar" },
+  { to: "/librarySection", icon: Menu, label: "categories" },
+  // { to: "/suggestions", icon: Opportunity, label: "Takliflar" },
+  ...(isAuthenticated.value
+    ? []
+    : [{ to: "/suggestions", icon: Opportunity, label: "Takliflar" }]),
+  ...(isAuthenticated.value
+    ? [{ to: "/admin", icon: User, label: "Admin" }]
+    : []),
 ];
 
 function toggle(): void {

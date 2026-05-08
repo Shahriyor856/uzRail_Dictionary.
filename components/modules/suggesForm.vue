@@ -1,28 +1,27 @@
 <!-- pages/takliflar.vue -->
 <template>
   <div
-    class="bg-[#0f2a47] min-h-[60vh] flex items-center justify-center px-4 py-10 border-b border-b-gray-600"
+    class="h-full flex items-center justify-center px-4 py-6 sm:py-8 md:py-10"
   >
-    <div class="w-full max-w-[560px] flex flex-col gap-5">
+    <div class="max-w-screen-md w-full flex flex-col gap-2 sm:gap-4 md:gap-6">
       <!-- Info box -->
       <div
-        class="bg-[#0d2a4a] border border-yellow-400/30 rounded-xl p-4 flex gap-3"
+        class="bg-[#fde8e6]  rounded-xl p-2 sm:p-4 flex items-center gap-2 sm:gap-3"
       >
-        <span class="text-yellow-400 mt-0.5 shrink-0 text-lg">
+        <span
+          class="text-red-600 mt-0.5 shrink-0 text-base sm:text-lg md:text-xl"
+        >
           <el-icon><Warning /></el-icon>
         </span>
 
-        <p class="text-white/70 text-sm leading-relaxed">
-          Faqat
-          <span class="text-white font-medium">temir yo'l sohasiga oid</span>
-          atama va terminlarni yuboring. Umumiy so'zlar, shaxs nomlari yoki
-          mavzuga aloqasiz so'zlar
-          <span class="text-red-400 font-medium">qabul qilinmaydi</span>.
+        <p class="text-[#b03a2e] text-xs sm:text-sm leading-relaxed">
+          Faqat temir yo'l sohasiga oid atama va terminlarni yuboring. Umumiy
+          so'zlar, shaxs nomlari yoki mavzuga aloqasiz so'zlar qabul qilinmaydi.
         </p>
       </div>
 
       <!-- Form -->
-      <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
+      <form class="flex flex-col gap-3 sm:gap-4" @submit.prevent="handleSubmit">
         <UiSuggestIput
           v-model="form.word"
           label="So'z / Atama"
@@ -38,7 +37,7 @@
 
         <button
           type="submit"
-          class="bg-yellow-400 hover:bg-yellow-300 text-[#0d2a4a] font-semibold text-sm rounded-lg py-2.5 transition-all duration-300"
+          class="bg-[#d4edda] text-[#1a7a4a] font-medium sm:font-semibold text-xs sm:text-sm rounded-lg py-1.5 sm:py-2.5 transition-all duration-300"
         >
           Yuborish
         </button>

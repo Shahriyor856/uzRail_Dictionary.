@@ -1,5 +1,7 @@
 <template>
-  <div class="px-4 sm:px-6 md:px-8 py-4 sm:py-6 md:py-8">
+  <div
+    class="max-w-screen-md mx-auto px-4 py-6 sm:py-8 md:py-10 flex flex-col transition-all duration-500"
+  >
     <!-- Category grid -->
     <UiCategories
       v-if="!selectedCategory && !selectedWord"
@@ -10,18 +12,8 @@
 
     <!-- Word list -->
     <div v-else-if="selectedCategory && !selectedWord">
-      <div class="max-w-[1200px] px-6 sm:px-8 py-2 sm:py-4">
-        <button
-          @click="clearCategory()"
-          class="flex items-center gap-1 text-xs sm:text-sm font-serif text-gray-500 hover:text-gray-800 transition-all duration-300"
-        >
-          <span>←</span>
-          <span
-            ><p class="text-xs sm:text-sm md:text-base">
-              {{ $t("back") }}
-            </p></span
-          >
-        </button>
+      <div class="py-2 sm:py-4">
+        <UiBackButton @click="clearCategory" />
       </div>
       <UiResultsTable />
     </div>

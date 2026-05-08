@@ -1,15 +1,9 @@
 <template>
   <div
-    class="flex flex-col p-6 sm:p-8 gap-8 w-full bg-white transition-all duration-500"
+    class="flex flex-col gap-4 sm:gap-6 md:gap-8 w-full transition-all duration-500"
   >
-    <div class="flex flex-col items-start gap-2">
-      <button
-        @click="goBack()"
-        class="flex items-center gap-1 text-xs sm:text-sm font-serif text-gray-500 hover:text-gray-800 transition-all duration-300"
-      >
-        <span>←</span>
-        <span>{{ $t("back") }}</span>
-      </button>
+    <div class="flex flex-col items-start gap-2 sm:gap-4">
+      <UiBackButton @click="goBack" />
       <h1 class="text-lg sm:text-2xl font-medium font-serif">
         {{ selectedWord.word }}
       </h1>
