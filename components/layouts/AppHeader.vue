@@ -184,14 +184,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import logo from "@/assests/images/logo.png";
-import {
-  Search,
-  Menu,
-  Reading,
-  Opportunity,
-  User,
-} from "@element-plus/icons-vue";
+import logo from "@/assests/images/emptyState/logo.png";
+import { Search, Menu, Opportunity, User } from "@element-plus/icons-vue";
 import uz from "@/assests/images/flags/uz.png";
 import kz from "@/assests/images/flags/kz.png";
 import ru from "@/assests/images/flags/ru.webp";

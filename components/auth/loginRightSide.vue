@@ -26,7 +26,7 @@
             <span class="text-yellow-400">{{ $t("headline_2") }}</span
             ><br />
             {{ $t("headline_3") }}
-          </h1> 
+          </h1>
           <p class="text-slate-400 text-sm mt-4 leading-relaxed max-w-xs">
             {{ $t("brand_desc") }}
           </p>
@@ -40,5 +40,5 @@
 </template>
 
 <script setup lang="ts">
-import logo from "@/assests/images/logo.png";
+import logo from "@/assests/images/emptyState/logo.png";
 </script>

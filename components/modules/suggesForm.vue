@@ -6,7 +6,7 @@
     <div class="max-w-screen-md w-full flex flex-col gap-2 sm:gap-4 md:gap-6">
       <!-- Info box -->
       <div
-        class="bg-[#fde8e6]  rounded-xl p-2 sm:p-4 flex items-center gap-2 sm:gap-3"
+        class="bg-[#fde8e6] rounded-xl p-2 sm:p-4 flex items-center gap-2 sm:gap-3"
       >
         <span
           class="text-red-600 mt-0.5 shrink-0 text-base sm:text-lg md:text-xl"

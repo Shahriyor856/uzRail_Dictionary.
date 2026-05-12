@@ -1,6 +1,5 @@
 <template>
-  <div class="bg-[#013a63]" 
-    >
+  <div class="bg-[#013a63]">
     <div
       class="max-w-[1200px] mx-auto flex flex-col items-center gap-2 sm:gap-4 py-8 sm:py-12 transition-all duration-500"
     >
@@ -8,7 +7,7 @@
         v-if="isAuthenticated"
         class="text-yellow-400 text-xs sm:text-sm font-serif"
       >
-        You are logged in :)
+        You are logged in
       </h1>
 
       <h3 class="text-white text-base sm:text-xl font-serif">
@@ -21,13 +20,13 @@
       <UiMianInput />
     </div>
   </div>
-  <UiEmptyState v-if="results.length === 0 && !selectedWord" />
-  <UiResultsTable v-else-if="results.length > 0 && !selectedWord" />
-  <ModulesConcept v-else-if="selectedWord" />
+
+  <UiEmptyState v-if="!selectedWord" />
+  <ModulesConcept v-else />
 </template>
 
 <script setup lang="ts">
-const { selectedWord, results, resetAll } = useSearch();
+const { selectedWord, resetAll } = useSearch();
 const { isAuthenticated } = useAuth();
 
 resetAll();
