@@ -1,13 +1,16 @@
-// server/api/auth/login.post.ts
+// server/api/auth/refresh.post.ts
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
-  const { username, password } = body;
+  const { refreshToken } = body;
+
+  if (!refreshToken) {
+    throw createError({ statusCode: 400, statusMessage: "Refresh token required" });
+  }
 
   const config = useRuntimeConfig();
   const apiBase = config.public?.apiBase || config.apiBase;
 
-  // TODO: Make sure NUXT_PUBLIC_API_BASE is set in your .env file
   if (!apiBase) {
     throw createError({ statusCode: 500, statusMessage: "Backend API base URL is not configured" });
   }
@@ -15,19 +18,13 @@ export default defineEventHandler(async (event) => {
   const response = await $fetch<{
     accessToken: string;
     refreshToken: string;
-    user: {
-      id: string;
-      fullName: string;
-      username: string;
-      role: "ADMIN" | "USER";
-    };
-  }>(`${apiBase}/api/auth/login`, {
+  }>(`${apiBase}/api/auth/refresh`, {
     method: "POST",
-    body: { username, password },
+    body: { refreshToken },
   }).catch((err) => {
     throw createError({
       statusCode: err?.response?.status || 401,
-      statusMessage: err?.data?.message || "Invalid credentials",
+      statusMessage: "Session expired. Please log in again.",
     });
   });
 

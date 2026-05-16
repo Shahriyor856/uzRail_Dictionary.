@@ -19,7 +19,7 @@
     </div>
 
     <!-- Word detail -->
-    <ModulesConcept v-else-if="selectedWord" />
+    <ModulesConceptSectionConcept v-else-if="selectedWord" />
   </div>
 </template>
 

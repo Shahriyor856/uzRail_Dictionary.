@@ -49,6 +49,14 @@
       {{ t("signin") + " " + (loading ? "...." : "→") }}
     </button>
 
+    <NuxtLink to="/librarySection">
+      <button
+        class="w-full py-2 sm:py-3 bg-gray-600 hover:bg-gray-500 text-xs sm:text-sm md:text-base text-white font-semibold rounded-xl transition-all"
+      >
+        enter as user
+      </button>
+    </NuxtLink>
+
     <!-- Forgot -->
     <p class="text-center text-xs sm:text-sm">
       <a href="#" class="text-yellow-400 hover:underline">{{ $t("forgot") }}</a>

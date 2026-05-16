@@ -178,7 +178,7 @@ const { t } = useI18n();
 
 const navLinks = computed(() => [
   { label: t("translator"), to: "/translator" },
-  { label: t("categories"), to: "/librarySection" },
+  { label: t("categories"), to: "/library-section" },
 ]);
 
 const categories = [

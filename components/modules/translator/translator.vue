@@ -17,15 +17,17 @@
         {{ $t("findIn") }}
       </h1>
 
-      <UiMianInput />
+      <UiMainInput />
     </div>
   </div>
 
   <UiEmptyState v-if="!selectedWord" />
-  <ModulesConcept v-else />
+  <ModulesConceptSectionConcept v-else />
 </template>
 
 <script setup lang="ts">
+import UiMainInput from "@/components/ui/mianInput.vue";
+
 const { selectedWord, resetAll } = useSearch();
 const { isAuthenticated } = useAuth();
 

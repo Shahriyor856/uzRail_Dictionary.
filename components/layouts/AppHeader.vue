@@ -1,3 +1,7 @@
+<!-- components/layouts/AppHeader.vue -->
+<!-- When user is Admin: only logo + language switcher are shown -->
+<!-- When user is regular User or not logged in: full nav is shown -->
+
 <template>
   <nav
     class="bg-[#012a4a] sticky top-0 z-[100] shadow-[0_1px_8px_rgba(0,0,0,0.2)] transition-all duration-500"
@@ -5,16 +9,15 @@
     <div
       class="flex items-center justify-between px-4 sm:px-6 h-[54px] sm:h-[64px] max-w-[1200px] mx-auto"
     >
-      <!-- Brand -->
+      <!-- Brand (always visible) -->
       <NuxtLink to="/" class="flex items-center gap-2 no-underline shrink-0">
         <div class="flex items-center justify-center">
           <img
             :src="logo"
             alt="image"
-            class="object-contain max-w-8 sm:max-w-10 w-ful h-full rounded-lg"
+            class="object-contain max-w-8 sm:max-w-10 w-full h-full rounded-lg"
           />
         </div>
-
         <div class="leading-tight hidden sm:block">
           <div class="text-white text-sm sm:text-base md:text-lg font-medium">
             {{ $t("railTranslator") }}
@@ -25,27 +28,29 @@
         </div>
       </NuxtLink>
 
-      <!-- Desktop nav -->
+      <!-- Right side controls -->
       <div class="flex items-center gap-4 sm:gap-6 md:gap-8">
-        <div class="hidden md:flex h-[54px] sm:h-[64px]">
+        <!-- Desktop nav links — hidden for admin users -->
+        <div v-if="!isAdmin" class="hidden md:flex h-[54px] sm:h-[64px]">
           <NuxtLink
             v-for="(link, index) in navlinks"
             :key="index"
             :to="link.to"
             class="h-full px-[18px] flex items-center gap-[6px] text-[13px] text-white no-underline border-b-2 border-transparent transition-all duration-500 hover:text-white"
-            active-class=" border-b-[#c8920a] bg-white/5"
+            active-class="border-b-[#c8920a] bg-white/5"
           >
             <el-icon><component :is="link.icon" /></el-icon>
             {{ $t(link.label) }}
           </NuxtLink>
         </div>
 
+        <!-- Mobile hamburger — hidden for admin users -->
         <button
+          v-if="!isAdmin"
           class="md:hidden p-2 text-[#4D4D52]"
           @click="menuOpen = !menuOpen"
           aria-label="Toggle menu"
         >
-          <!-- X icon when open, hamburger when closed -->
           <svg
             v-if="menuOpen"
             class="w-6 h-6"
@@ -75,20 +80,17 @@
             />
           </svg>
         </button>
-        <!-- <button v-if="!isAuthenticated" @click="goToLogin">
-          <p class="text-gray-400 text-sm sm:text-base">Login</p>
-        </button>
-        <button v-else @click="logout">
-          <p class="text-gray-400 text-sm sm:text-base">Logout</p>
-        </button> -->
 
+        <!-- Login/Logout button — hidden for admin (admin uses sidebar for logout) -->
         <button
+          v-if="!isAdmin"
           class="text-gray-400 text-sm sm:text-base"
           @click="isAuthenticated ? logout() : goToLogin()"
         >
           {{ isAuthenticated ? "Logout" : "Login" }}
         </button>
 
+        <!-- Language switcher (always visible) -->
         <div class="relative inline-block" ref="wrapper">
           <!-- Full button on md+ screens -->
           <button
@@ -117,7 +119,7 @@
             </svg>
           </button>
 
-          <!-- Icon-only button on small screens -->
+          <!-- Icon-only on small screens -->
           <button
             @click="toggle"
             class="flex md:hidden items-center justify-center bg-black/10 border border-gray-400 rounded-xl w-10 h-10 text-lg hover:bg-black/10 transition"
@@ -160,10 +162,10 @@
       </div>
     </div>
 
-    <!-- Mobile menu -->
+    <!-- Mobile menu — hidden for admin users -->
     <transition name="slide">
       <div
-        v-if="menuOpen"
+        v-if="!isAdmin && menuOpen"
         class="flex flex-col bg-[#0a2548] border-t border-white/10"
       >
         <NuxtLink
@@ -191,10 +193,9 @@ import kz from "@/assests/images/flags/kz.png";
 import ru from "@/assests/images/flags/ru.webp";
 import eng from "@/assests/images/flags/britan.png";
 
-const { isAuthenticated, logout } = useAuth();
-const goToLogin = () => {
-  navigateTo("/login");
-};
+const { isAuthenticated, isAdmin, logout } = useAuth();
+
+const goToLogin = () => navigateTo("/login");
 
 type LocaleCode = "uz" | "oz" | "kz" | "ru" | "en";
 
@@ -227,17 +228,15 @@ const current = computed<Language>(() => {
   return languages.find((l) => l.code === code) ?? languages[0];
 });
 
-const navlinks = [
+// Nav links for regular users only
+// Note: these are computed so they react to auth state
+const navlinks = computed(() => [
   { to: "/translator", icon: Search, label: "translator" },
   { to: "/librarySection", icon: Menu, label: "categories" },
-  // { to: "/suggestions", icon: Opportunity, label: "Takliflar" },
-  ...(isAuthenticated.value
-    ? []
-    : [{ to: "/suggestions", icon: Opportunity, label: "Takliflar" }]),
-  ...(isAuthenticated.value
-    ? [{ to: "/admin", icon: User, label: "Admin" }]
+  ...(!isAuthenticated.value
+    ? [{ to: "/suggestions", icon: Opportunity, label: "Takliflar" }]
     : []),
-];
+]);
 
 function toggle(): void {
   open.value = !open.value;
@@ -267,13 +266,11 @@ onUnmounted(() => document.removeEventListener("click", handleClickOutside));
     opacity 0.2s;
   overflow: hidden;
 }
-
 .slide-enter-from,
 .slide-leave-to {
   max-height: 0;
   opacity: 0;
 }
-
 .slide-enter-to,
 .slide-leave-from {
   max-height: 200px;

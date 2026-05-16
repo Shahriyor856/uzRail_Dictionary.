@@ -1,0 +1,3 @@
+<template>
+  <ModulesAdminCreateAdmin />
+</template>
